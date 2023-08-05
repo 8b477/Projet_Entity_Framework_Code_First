@@ -1,4 +1,4 @@
-Lang => [FR](README.md) / [EN](README_EN.md)
+Lang => [FR](README.md)/[EN](README_EN.md)
 
 ---------------------------------
 
