@@ -24,7 +24,7 @@
 
    *C'est quoi un modèle ?*  
    
-   *=> C'est tout simplement la représentation de nos tables en base de donnée.*
+   *=> C'est tout simplement la représentation de nos tables en base de données.*
 
 ## 2. **Créer la classe du contexte.**
 Exemple dans le code :   
@@ -59,4 +59,4 @@ builder.Services.AddDbContext<MyContext>(option =>
 ----------------------
   
 ## Conclusion
-Il suffit ensuite d'exécuter les commandes de 'migrations' puis de 'update' et la base de donnée sera créer ainsi que les tables et différentes contraintes.
+Il suffit ensuite d'exécuter les commandes de 'migrations' puis de 'update' et la base de donnée sera créée ainsi que les tables et différentes contraintes.
