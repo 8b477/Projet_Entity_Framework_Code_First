@@ -1,5 +1,7 @@
-Langage => [FR](https://example.com/ "titre de lien optionnel")/[EN](https://example.com/ "titre de lien optionnel")
---------
+Lang => [FR](README.md) / [EN](README_EN.md)
+
+---------------------------------
+
 ## CLI (Command Line Interface)
 
 *Through the terminal (right-click on the project and choose => 'Open in Terminal').*  
