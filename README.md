@@ -1,14 +1,18 @@
 --------
-## => CLI (Ligne de commande) <= 
+## CLI (Ligne de commande)
 
-Via le terminal (clic droit sur le projet et choisir => 'Ouvrir dans terminal'.
+*Via le terminal (clic droit sur le projet et choisir => 'Ouvrir dans terminal'.*  
+
+----------------
 
 ### NuGet Package à installer
+**A faire en début de projet**  
 
 `dotnet add package Microsoft.EntityFrameworkCore.Design`  
 `dotnet add package Microsoft.EntityFrameworkCore.SqlServer`
 
 ### CLI
+**A faire à la fin quand la structure des fichiers a été établie**  
 
 1. `dotnet ef migrations add init`
 2. `dotnet ef database update`
@@ -35,7 +39,7 @@ builder.Services.AddDbContext<MyContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("nom_référence_json"));
 });
 ```
-   *=> Celui ci vas rechercher la chaîne de connection dans le fichier appsettings.json.*
+   *=> Celui-ci vas rechercher la chaîne de connection dans le fichier appsettings.json.*
 
 
 ## 4. **Le fichier .json ce présente comme ceci :**
@@ -47,8 +51,11 @@ builder.Services.AddDbContext<MyContext>(option =>
 ```
 
 ## 5. **Créer un fichier EntityTypeConfiguration.cs (si besoin).**  
-  *=> Le but ici est de ne pas trop charger la classe de contexte de base.*
+  *=> Le but ici est de ne pas trop charger la classe de contexte de base.*   
   
+  Exemple dans le code : 
+  [Projet_Entity_Framework_Code_First/DataBase/DatabaseTypeConfigurations/BlogEntityTypeConfiguration.cs](Projet_Entity_Framework_Code_First/DataBase/DatabaseTypeConfigurations/BlogEntityTypeConfiguration.cs)
+
 ----------------------
   
 ## Conclusion
