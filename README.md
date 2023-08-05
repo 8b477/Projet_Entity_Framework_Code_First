@@ -1,4 +1,4 @@
-[FR](README.md) / [EN](README_EN.md)
+# [EN](README_EN.md) / [FR](README.md)
 
 ---------------------------------
 
