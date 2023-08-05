@@ -1,4 +1,7 @@
---------
+Lang => [FR](README.md)/[EN](README_EN.md)
+
+---------------------------------
+
 ## CLI (Ligne de commande)
 
 *Via le terminal (clic droit sur le projet et choisir => 'Ouvrir dans terminal'.*  
