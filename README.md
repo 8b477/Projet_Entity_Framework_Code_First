@@ -23,6 +23,8 @@ Via le terminal (clic droit sur le projet et choisir => 'Ouvrir dans terminal'.
    *=> C'est tout simplement la représentation de nos tables en base de donnée.*
 
 ## 2. **Créer la classe du contexte.**
+Exemple dans le code :   
+=> [Projet_Entity_Framework_Code_First/DataBase/Context/MyContext.cs](Projet_Entity_Framework_Code_First/DataBase/Context/MyContext.cs).
 
 
 ## 3. **En même temp rajouter la chaîne de connection dans le fichier program.cs :**
