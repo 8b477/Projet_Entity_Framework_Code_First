@@ -1,4 +1,18 @@
-# [FR](README.md) / [EN](README_EN.md)
+# [EN](README_EN.md) / [FR](README.md)
+
+---------------------------------
+# Step one
+![step one](Screen_EF/create_project_step1.png)
+
+# Step Two
+![step one](Screen_EF/create_project_step2.png)
+
+# Step Three
+![step one](Screen_EF/create_project_step3.png)
+
+# Step Four
+![step one](Screen_EF/create_project_step4.png)
+
 
 ---------------------------------
 
