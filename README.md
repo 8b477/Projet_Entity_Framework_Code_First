@@ -60,7 +60,7 @@ builder.Services.AddDbContext<MyContext>(option =>
 
 
 ## 4. **Le fichier .json ce présente comme ceci :**
-
+Aide pour la syntaxe de la connection string : https://www.connectionstrings.com/
 ```json
 "ConnectionStrings": {
     "nom_référence_json": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Nom_De_Ma_DB;Integrated Security=True;"
