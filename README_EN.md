@@ -1,4 +1,4 @@
-# [EN](README_EN.md) / [FR](README.md)
+#  [FR](README.md) / [EN](README_EN.md)
 
 ---------------------------------
 # Step one
