@@ -39,7 +39,7 @@
 
 ## 1. **Créer son ou ses modèles.**
 
-   *C'est quoi un modèle ?*  
+   - *C'est quoi un modèle ?*  
    
    *=> C'est tout simplement la représentation de nos tables en base de données.*
 
@@ -91,7 +91,7 @@ builder.Services.AddDbContext<MyContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("nom_référence_json"));
 });
 ```
-   *- Celui-ci vas rechercher la chaîne de connection dans le fichier appsettings.json  
+   - *Celui-ci vas rechercher la chaîne de connection dans le fichier appsettings.json  
     => "nom_référence_json", voire étape suivante*
 
 ---------------------------------
