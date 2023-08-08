@@ -26,13 +26,17 @@
 **A faire en début de projet**  
 
 `dotnet add package Microsoft.EntityFrameworkCore.Design`  
-`dotnet add package Microsoft.EntityFrameworkCore.SqlServer`
+`dotnet add package Microsoft.EntityFrameworkCore.SqlServer`  
+`dotnet add package Microsoft.EntityFrameworkCore.Tools`  
+`dotnet tool install --global dotnet-ef`
 
 ### CLI
 **A faire à la fin quand la structure des fichiers a été établie**  
 
-1. `dotnet ef migrations add init`
-2. `dotnet ef database update`
+1. `dotnet ef migrations add init`  
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ou  
+`dotnet ef migrations add init -o [chemin]`
+3. `dotnet ef database update`
 
 -----------------------
 # Shéma à suivre pour la création de A à Z *(simple)*.
