@@ -43,19 +43,45 @@
    
    *=> C'est tout simplement la représentation de nos tables en base de données.*
 
-![Exemple de modèle](Screen_EF/ExempleModel.png)
+```C#
+    public class Blog
+    {
+        public int BlogId { get; set; }
+        public string Url { get; set; }
+    }
+```
+
+---------------------------------
 
 ## 2. **Créer la classe du contexte.**
 
-![Exemple context](Screen_EF/ExempleContext.png)
+```C#
+ public partial class MyContext : DbContext
+    {
+                
+        public MyContext(DbContextOptions options) : base(options) { }
 
-Exemple dans le code :   
-=> [Projet_Entity_Framework_Code_First/DataBase/Context/MyContext.cs](Projet_Entity_Framework_Code_First/DataBase/Context/MyContext.cs).
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){}
 
-## Ajouter le modèle créée
+        protected override void OnModelCreating(ModelBuilder modelBuilder) {}
+    }
+```
 
-![Exemple ajout d'un modèle dans le contexte](Screen_EF/InsérerNotreModelDansLeContext.png)
 
+## Ajouter le(s) modèle(s) créée au point 1.
+
+```C#
+    public partial class MyContext : DbContext
+    {        
+        public MyContext(DbContextOptions options) : base(options) { }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){}
+        protected override void OnModelCreating(ModelBuilder modelBuilder){ }
+
+        public DbSet<Blog> Blog { get; set; }
+    }
+```
+
+---------------------------------
 
 ## 3. **En même temp rajouter la chaîne de connection dans le fichier program.cs :**
 
@@ -65,8 +91,10 @@ builder.Services.AddDbContext<MyContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("nom_référence_json"));
 });
 ```
-   *=> Celui-ci vas rechercher la chaîne de connection dans le fichier appsettings.json => "nom_référence_json", voire étape suivante*
+   *- Celui-ci vas rechercher la chaîne de connection dans le fichier appsettings.json  
+    => "nom_référence_json", voire étape suivante*
 
+---------------------------------
 
 ## 4. **Le fichier .json ce présente comme ceci :**
 Aide pour la syntaxe de la connection string : https://www.connectionstrings.com/
@@ -76,15 +104,43 @@ Aide pour la syntaxe de la connection string : https://www.connectionstrings.com
   }
 ```
 
-## 5. **Créer un fichier EntityTypeConfiguration.cs (si besoin).**  
+---------------------------------
+
+## 5. **Créer une classe [NomDuModel]EntityTypeConfiguration.cs (si besoin).**  
   *=> Le but ici est de ne pas trop charger la classe de contexte de base.*   
 
-![Exemple de classe EntityConfiguration](Screen_EF/ExempleEntityConfiguration.png)
-  
-  Exemple dans le code : 
-  [Projet_Entity_Framework_Code_First/DataBase/DatabaseTypeConfigurations/BlogEntityTypeConfiguration.cs](Projet_Entity_Framework_Code_First/DataBase/DatabaseTypeConfigurations/BlogEntityTypeConfiguration.cs)
+```C#
+ public class BlogEntityTypeConfiguration : IEntityTypeConfiguration<Blog>
+        {
+            public void Configure(EntityTypeBuilder<Blog> builder)
+            {
+                builder
+                    .Property(b => b.Url)
+                    .IsRequired();
+            }
+        }
+```
+
+---------------------------------
 
 ### Et ajouter celle-ci dans vôtre classe de contexte, comme ci dessous
+
+```C#
+    public partial class MyContext : DbContext
+    {
+                
+        public MyContext(DbContextOptions options) : base(options) { }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+             new BlogEntityTypeConfiguration().Configure(modelBuilder.Entity<Blog>());
+        }
+
+        public DbSet<Blog> Blog { get; set; }
+    }
+```
 
 ![](Screen_EF/ExempleAjoutDeNotreClassDeContrainte.png)
 ----------------------
