@@ -43,9 +43,15 @@
    
    *=> C'est tout simplement la représentation de nos tables en base de données.*
 
+![Exemple de modèle](Screen_EF/ExempleModel.png)
+
 ## 2. **Créer la classe du contexte.**
 Exemple dans le code :   
 => [Projet_Entity_Framework_Code_First/DataBase/Context/MyContext.cs](Projet_Entity_Framework_Code_First/DataBase/Context/MyContext.cs).
+
+## Ajouter le modèle créée
+
+![Exemple ajout d'un modèle dans le contexte](Screen_EF/InsérerNotreModelDansLeContext.png)
 
 
 ## 3. **En même temp rajouter la chaîne de connection dans le fichier program.cs :**
@@ -73,6 +79,9 @@ Aide pour la syntaxe de la connection string : https://www.connectionstrings.com
   Exemple dans le code : 
   [Projet_Entity_Framework_Code_First/DataBase/DatabaseTypeConfigurations/BlogEntityTypeConfiguration.cs](Projet_Entity_Framework_Code_First/DataBase/DatabaseTypeConfigurations/BlogEntityTypeConfiguration.cs)
 
+### Et ajouter celle-ci dans vôtre classe de contexte, comme ci dessous
+
+![](Screen_EF/ExempleAjoutDeNotreClassDeContrainte.png)
 ----------------------
   
 ## Conclusion
