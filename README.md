@@ -46,6 +46,9 @@
 ![Exemple de modèle](Screen_EF/ExempleModel.png)
 
 ## 2. **Créer la classe du contexte.**
+
+![Exemple context](Screen_EF/ExempleContext.png)
+
 Exemple dans le code :   
 => [Projet_Entity_Framework_Code_First/DataBase/Context/MyContext.cs](Projet_Entity_Framework_Code_First/DataBase/Context/MyContext.cs).
 
@@ -62,7 +65,7 @@ builder.Services.AddDbContext<MyContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("nom_référence_json"));
 });
 ```
-   *=> Celui-ci vas rechercher la chaîne de connection dans le fichier appsettings.json.*
+   *=> Celui-ci vas rechercher la chaîne de connection dans le fichier appsettings.json => "nom_référence_json", voire étape suivante*
 
 
 ## 4. **Le fichier .json ce présente comme ceci :**
@@ -75,6 +78,8 @@ Aide pour la syntaxe de la connection string : https://www.connectionstrings.com
 
 ## 5. **Créer un fichier EntityTypeConfiguration.cs (si besoin).**  
   *=> Le but ici est de ne pas trop charger la classe de contexte de base.*   
+
+![Exemple de classe EntityConfiguration](Screen_EF/ExempleEntityConfiguration.png)
   
   Exemple dans le code : 
   [Projet_Entity_Framework_Code_First/DataBase/DatabaseTypeConfigurations/BlogEntityTypeConfiguration.cs](Projet_Entity_Framework_Code_First/DataBase/DatabaseTypeConfigurations/BlogEntityTypeConfiguration.cs)
