@@ -36,7 +36,10 @@
 **To be done at the end, once the file structure has been established**  
 
 1. `dotnet ef migrations add init`
-2. `dotnet ef database update`
+   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; or  
+`dotnet ef migrations add init -o [root]`
+3. `dotnet ef database update`
+   
 
 -----------------------
 # Step-by-Step Guide for Creating A to Z (simple).*.
