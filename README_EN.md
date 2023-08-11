@@ -28,7 +28,9 @@
 **To be done at the beginning of the project**  
 
 `dotnet add package Microsoft.EntityFrameworkCore.Design`  
-`dotnet add package Microsoft.EntityFrameworkCore.SqlServer`
+`dotnet add package Microsoft.EntityFrameworkCore.SqlServer`  
+`dotnet add package Microsoft.EntityFrameworkCore.Tools`  
+`dotnet tool install --global dotnet-ef`
 
 ### CLI
 **To be done at the end, once the file structure has been established**  
